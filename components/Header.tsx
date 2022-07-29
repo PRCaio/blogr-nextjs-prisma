@@ -14,9 +14,15 @@ const Header: React.FC = () => {
           Feed
         </a>
       </Link>
+      <Link href="/create">
+        <a className="bold" data-active={isActive("/create")}>
+          Criar um novo local
+        </a>
+      </Link>
       <style jsx>{`
         .bold {
           font-weight: bold;
+          
         }
 
         a {

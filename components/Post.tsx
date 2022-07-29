@@ -10,6 +10,9 @@ export type PostProps = {
     email: string;
   } | null;
   content: string;
+  icon: string;
+  latitude: string;
+  longitude: string;
   published: boolean;
 };
 
@@ -19,7 +22,10 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
     <div onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
       <h2>{post.title}</h2>
       <small>By {authorName}</small>
-      <ReactMarkdown children={post.content} />
+      <a>{post.latitude}</a>
+      <a>{post.longitude}</a>
+      <a>{post.icon}</a>
+      {/* <ReactMarkdown children={post.content} /> */}
       <style jsx>{`
         div {
           color: inherit;
