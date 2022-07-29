@@ -21,10 +21,11 @@ const Post: React.FC<{ post: PostProps }> = ({ post }) => {
   return (
     <div onClick={() => Router.push("/p/[id]", `/p/${post.id}`)}>
       <h2>{post.title}</h2>
+      
+      <p>Latitude: {post.latitude}</p>
+      <p>Longitude: {post.longitude}</p>
+      <p>icone: {post.icon}</p>
       <small>By {authorName}</small>
-      <a>{post.latitude}</a>
-      <a>{post.longitude}</a>
-      <a>{post.icon}</a>
       {/* <ReactMarkdown children={post.content} /> */}
       <style jsx>{`
         div {

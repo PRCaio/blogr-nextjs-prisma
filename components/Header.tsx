@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       </Link>
       <Link href="/create">
         <a className="bold" data-active={isActive("/create")}>
-          Criar um novo local
+          Cadastrar local
         </a>
       </Link>
       <style jsx>{`

@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown"
 import Layout from "../../components/Layout"
 import { PostProps } from "../../components/Post"
 import prisma from '../../lib/prisma';
+import Router from "next/router"
 
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
@@ -22,6 +23,13 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   };
 };
 
+async function deletePost(id: string): Promise<void> {
+  await fetch(`/api/post/${id}`, {
+    method: 'DELETE',
+  });
+  Router.push('/');
+}
+
 
 const Post: React.FC<PostProps> = (props) => {
   let title = props.longitude
@@ -36,6 +44,7 @@ const Post: React.FC<PostProps> = (props) => {
         <p>By {props?.author?.name || "Unknown author"}</p>
         {/* <ReactMarkdown children={props.content} /> */}
         <p>{props.content}</p>
+        <button onClick={() => deletePost(props.id)}>Delete</button>
       </div>
       <style jsx>{`
         .page {
