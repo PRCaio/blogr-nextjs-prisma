@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Router from 'next/router';
 import styles from './../styles/Layout.module.css'
-import Img64 from './../components/img64'
+
 
 
 const Draft: React.FC = () => {
