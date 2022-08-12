@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Rubens\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add --exact --cwd C:\Users\Rubens\Desktop\Dev\Estudo sobre blog Next.js\Testando e alterando\blogr-nextjs-prisma --dev eslint eslint-config-next
+  C:\Program Files\nodejs\node.exe C:\Users\Rubens\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @heroicons/react/solid
 
 PATH: 
-  C:\Users\Rubens\AppData\Local\Temp\yarn--1659106401484-0.8835657303675253;C:\Users\Rubens\Desktop\Dev\Estudo sobre blog Next.js\Testando e alterando\blogr-nextjs-prisma\node_modules\.bin;C:\Users\Rubens\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Users\Rubens\AppData\Local\Yarn\bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Users\Rubens\AppData\Local\Android\Sdk\platform-tools;C:\Users\Rubens\AppData\Local\Android\Sdk\tools\bin;C:\Program Files\Java\jdk-11.0.12\bin;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\Rubens\AppData\Local\Microsoft\WindowsApps;D:\Arquivos De Programas\Microsoft VS Code\bin;C:\Users\Rubens\AppData\Roaming\npm;C:\Users\Rubens\AppData\Local\GitHubDesktop\bin
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Users\Rubens\AppData\Local\Android\Sdk\platform-tools;C:\Users\Rubens\AppData\Local\Android\Sdk\tools\bin;C:\Program Files\Java\jdk-11.0.12\bin;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\Rubens\AppData\Local\Microsoft\WindowsApps;D:\Arquivos De Programas\Microsoft VS Code\bin;C:\Users\Rubens\AppData\Roaming\npm;C:\Users\Rubens\AppData\Local\GitHubDesktop\bin
 
 Yarn version: 
   1.22.10
@@ -14,7 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\Rubens\Desktop\Dev\Estudo sobre blog Next.js\Testando e alterando\blogr-nextjs-prisma\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node'
+  Error: https://registry.yarnpkg.com/@heroicons%2freact/solid: Request "https://registry.yarnpkg.com/@heroicons%2freact/solid" returned a 405
+      at Request.params.callback [as _callback] (C:\Users\Rubens\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66997:18)
+      at Request.self.callback (C:\Users\Rubens\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
+      at Request.emit (events.js:376:20)
+      at Request.<anonymous> (C:\Users\Rubens\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
+      at Request.emit (events.js:376:20)
+      at IncomingMessage.<anonymous> (C:\Users\Rubens\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
+      at Object.onceWrapper (events.js:482:28)
+      at IncomingMessage.emit (events.js:388:22)
+      at endReadableNT (internal/streams/readable.js:1336:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
 
 npm manifest: 
   {
@@ -33,8 +43,10 @@ npm manifest:
     "dependencies": {
       "@prisma/client": "^4.1.1",
       "next": "12.0.10",
+      "nookies": "^2.5.2",
       "react": "17.0.2",
       "react-dom": "17.0.2",
+      "react-hook-form": "^7.34.0",
       "react-markdown": "8.0.0"
     },
     "devDependencies": {
@@ -209,6 +221,11 @@ Lockfile:
     version "2.0.2"
     resolved "https://registry.yarnpkg.com/comma-separated-tokens/-/comma-separated-tokens-2.0.2.tgz#d4c25abb679b7751c880be623c1179780fe1dd98"
     integrity sha512-G5yTt3KQN4Yn7Yk4ed73hlZ1evrFKXeUW3086p3PRFNp7m2vIjI6Pg+Kgb+oyzhd9F2qdcoj67+y3SdxL5XWsg==
+  
+  cookie@^0.4.1:
+    version "0.4.2"
+    resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.2.tgz#0e41f24de5ecf317947c82fc789e06a884824432"
+    integrity sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==
   
   csstype@^3.0.2:
     version "3.1.0"
@@ -568,6 +585,14 @@ Lockfile:
       "@next/swc-win32-ia32-msvc" "12.0.10"
       "@next/swc-win32-x64-msvc" "12.0.10"
   
+  nookies@^2.5.2:
+    version "2.5.2"
+    resolved "https://registry.yarnpkg.com/nookies/-/nookies-2.5.2.tgz#cc55547efa982d013a21475bd0db0c02c1b35b27"
+    integrity sha512-x0TRSaosAEonNKyCrShoUaJ5rrT5KHRNZ5DwPCuizjgrnkpE5DRf3VL7AyyQin4htict92X1EQ7ejDbaHDVdYA==
+    dependencies:
+      cookie "^0.4.1"
+      set-cookie-parser "^2.4.6"
+  
   object-assign@^4.1.1:
     version "4.1.1"
     resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -616,6 +641,11 @@ Lockfile:
       loose-envify "^1.1.0"
       object-assign "^4.1.1"
       scheduler "^0.20.2"
+  
+  react-hook-form@^7.34.0:
+    version "7.34.0"
+    resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.34.0.tgz#22883b5e014e5c5e35f3061d0e3862153b0df2ec"
+    integrity sha512-s0/TJ09NVlEk2JPp3yit1WnMuPNBXFmUKEQPulgDi9pYBw/ZmmAFHe6AXWq73Y+kp8ye4OcMf0Jv+i/qLPektg==
   
   react-is@^16.13.1:
     version "16.13.1"
@@ -688,6 +718,11 @@ Lockfile:
     dependencies:
       loose-envify "^1.1.0"
       object-assign "^4.1.1"
+  
+  set-cookie-parser@^2.4.6:
+    version "2.5.1"
+    resolved "https://registry.yarnpkg.com/set-cookie-parser/-/set-cookie-parser-2.5.1.tgz#ddd3e9a566b0e8e0862aca974a6ac0e01349430b"
+    integrity sha512-1jeBGaKNGdEq4FgIrORu/N570dwoPYio8lSoYLWmX7sQ//0JY08Xh9o5pBcgmHQ/MbsYp/aZnOe1s1lIsbLprQ==
   
   source-map-js@^1.0.1:
     version "1.0.2"

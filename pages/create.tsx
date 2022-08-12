@@ -3,6 +3,9 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Router from 'next/router';
+import styles from './../styles/Layout.module.css'
+import Img64 from './../components/img64'
+
 
 const Draft: React.FC = () => {
   const [title, setTitle] = useState('');
@@ -11,6 +14,9 @@ const Draft: React.FC = () => {
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
   const author = 'cl66gl8kv0019u4e1rjmb7rjz'
+  const [img64, setImg64] = useState('')
+  const [newPicture, setNewPicture] = useState('')
+
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -26,12 +32,16 @@ const Draft: React.FC = () => {
       console.error(error);
     }
   };
+  
+
 
   return (
     <Layout>
       <div>
+        <img src={img64} alt="" />
         <form onSubmit={submitData}>
           <h1>Cadastro de novo local</h1>
+
           <input
             autoFocus
             onChange={(e) => setTitle(e.target.value)}
@@ -39,7 +49,7 @@ const Draft: React.FC = () => {
             type="text"
             value={title}
           />
-          
+
           <textarea
             cols={50}
             onChange={(e) => setIcon(e.target.value)}
@@ -74,8 +84,15 @@ const Draft: React.FC = () => {
             or Cancel
           </a>
         </form>
+        <div className={styles.html} >
+          <div className={styles.html1} dangerouslySetInnerHTML={{ __html: content }}>
+          </div>
+        </div>
+
       </div>
+      
       <style jsx>{`
+        
         .page {
           background: var(--geist-background);
           padding: 3rem;
@@ -103,6 +120,7 @@ const Draft: React.FC = () => {
           margin-left: 1rem;
         }
       `}</style>
+
     </Layout>
   );
 };

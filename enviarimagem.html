@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar imagem em base 64</title>
+    
+</head>
+<body>
+    <input type="file" id="imagem-usuario" onchange="converterImagem()">
+
+    <div id="apresentar-imagem"></div>
+    <img src='' alt="">
+
+    <script>
+        //converter imagem para base 64
+        var imgFort = null
+        function converterImagem(){
+            var receberArquivo = document.getElementById("imagem-usuario").files;
+            console.log(receberArquivo)
+
+            var carregarImagem = receberArquivo[0];
+           
+            var lerArquivo = new FileReader();
+
+            lerArquivo.onload = function(arquivoCarregado){
+                var imgBase64 = arquivoCarregado.target.result;
+                console.log(imgBase64)
+                imgFort = imgBase64
+
+                var novaImagem = document.createElement('img');
+                novaImagem.src = imgBase64;
+                document.getElementById("apresentar-imagem").innerHTML = novaImagem.outerHTML
+
+
+            }
+
+            lerArquivo.readAsDataURL(carregarImagem);
+        }
+    </script>
+</body>
+</html>

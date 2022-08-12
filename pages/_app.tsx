@@ -1,8 +1,11 @@
 import { AppProps } from "next/app";
+import AuthProvider from "./contexts/AuthContext";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <Component {...pageProps} />
+    <AuthProvider>
+      <Component {...pageProps} />
+    </AuthProvider>
   );
 };
 

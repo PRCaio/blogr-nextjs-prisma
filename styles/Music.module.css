@@ -1,0 +1,116 @@
+   .audioplayercontainer {
+    position: relative;   
+    width: 19rem;
+    height: 15rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 2.0rem;  
+    background: linear-gradient(to bottom, #235870, black);
+    left: 2rem;
+    
+  }
+  .p {
+    position: absolute;
+    width: 3rem;
+    height: 3rem;    
+    border-radius: 1.5rem;    
+    font-size: 28px;
+    background:   #3e9cc7;
+    bottom: 1.0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .p:hover {    
+    background: #3fbaf3;
+  }
+  .playicon {
+    margin: 20px 2.5% 20px 2.5%;
+  }
+  .path {
+    stroke: #007db5;
+  }
+  .perfil {
+    width: 9rem;
+    border-radius: 4.5rem;
+    
+    
+    
+  }
+  .divimg {
+    max-width: 9rem;
+    height: 9rem;
+    border-radius: 4.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: #235870;
+    overflow: hidden;
+    margin: auto ;
+    
+    
+  }
+
+  .phone {
+    right: 1rem;
+    color: #12a1e4;
+    position: absolute;
+    top: 1.5rem;
+    
+    
+
+  }
+
+  .volume {
+    transform: rotate(-90deg);
+    display: flex;
+    color: #12a1e4;   
+    left: -5rem;
+    top: 36%;
+    position: absolute;
+    
+  }
+
+  .volume1 {
+    -webkit-appearance: none;
+    background:#007cb585;
+    outline: none;
+    width: 12rem;
+    height: 20px;
+    border-radius: 9px;   
+    
+  }
+
+  .player {
+    height: 19rem;
+    position: relative; 
+  }
+
+  .countView{
+    color:#12a1e4;
+    font-size: 1.3rem;
+    position: absolute;
+    right: 1.5rem;
+    top: 2rem
+
+  }
+
+  .name{
+    color:#12a1e4;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 5rem;
+    bottom: 1rem;
+
+  }
+
+  .timeDown{
+    color:#12a1e4;
+    font-size: 0.8rem;
+    position: absolute;
+    left: 5rem;
+    bottom: 0.8rem;
+
+  }
+
+ 
