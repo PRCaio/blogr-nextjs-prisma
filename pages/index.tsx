@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import { GetStaticProps } from "next"
 import Layout from "../components/Layout"
 import Post, { PostProps } from "../components/Post"
 import prisma from '../lib/prisma';
-
+import { AuthContext } from './contexts/AuthContext';
+import Router from 'next/router'
 
 
 // index.tsx
@@ -22,6 +23,10 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
+
+
+
+
 type Props = {
   feed: PostProps[]
 }
@@ -29,6 +34,7 @@ type Props = {
 const Blog: React.FC<Props> = (props) => {
   return (
     <Layout>
+      
       <div className="page">
         <h1>Public Feed</h1>
         <main>

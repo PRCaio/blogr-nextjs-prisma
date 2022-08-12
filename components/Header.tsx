@@ -1,11 +1,22 @@
-import React from "react";
+import React, {useContext, useEffect} from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { AuthContext } from './../pages/contexts/AuthContext';
+import Router from 'next/router'
+
 
 const Header: React.FC = () => {
   const router = useRouter();
   const isActive: (pathname: string) => boolean = (pathname) =>
     router.pathname === pathname;
+  
+    const { signIn, isAuthenticated } = useContext(AuthContext)
+
+    useEffect(()=>{
+      if(!isAuthenticated){
+        Router.push('/auth');
+      }
+    })
 
   let left = (
     <div className="left">

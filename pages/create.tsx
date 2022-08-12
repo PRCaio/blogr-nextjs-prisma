@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Router from 'next/router';
 import styles from './../styles/Layout.module.css'
+import Img64 from '../components/img64';
 
 
 
@@ -16,6 +17,7 @@ const Draft: React.FC = () => {
   const author = 'cl66gl8kv0019u4e1rjmb7rjz'
   const [img64, setImg64] = useState('')
   const [newPicture, setNewPicture] = useState('')
+
 
 
   const submitData = async (e: React.SyntheticEvent) => {
@@ -32,11 +34,41 @@ const Draft: React.FC = () => {
       console.error(error);
     }
   };
-  
+
+  const uploadImage = async (e) => {
+
+    const file = e.target.files[0];
+    const base64 = await convertBase64(file);
+    const stringimg = `${base64}`
+
+    console.log(stringimg)
+
+    setIcon(stringimg);
+
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      if (file != null) {
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+
+        fileReader.onload = () => {
+          resolve(fileReader.result);
+        };
+
+        fileReader.onerror = (error) => {
+          reject(error);
+        };
+      }
+    });
+  };
+
 
 
   return (
     <Layout>
+      <Img64></Img64>
       <div>
         <img src={img64} alt="" />
         <form onSubmit={submitData}>
@@ -50,13 +82,17 @@ const Draft: React.FC = () => {
             value={title}
           />
 
-          <textarea
-            cols={50}
-            onChange={(e) => setIcon(e.target.value)}
-            placeholder="Insira o link do ícone."
-            rows={1}
-            value={icon}
+          <input
+            type="file"
+            onChange={(e) => {
+              uploadImage(e);
+            }}
+            placeholder="Escolha"
+            accept="image/*"
           />
+          <div className="image">
+            <img src={icon} height="200px" />
+          </div>
           <textarea
             cols={50}
             onChange={(e) => setLatitude(e.target.value)}
@@ -90,7 +126,7 @@ const Draft: React.FC = () => {
         </div>
 
       </div>
-      
+
       <style jsx>{`
         
         .page {
@@ -118,6 +154,9 @@ const Draft: React.FC = () => {
 
         .back {
           margin-left: 1rem;
+        }
+        .image{
+          height: 200px
         }
       `}</style>
 

@@ -26,7 +26,7 @@ export const AuthContext = createContext({} as AuthContextType)
 const AuthProvider: React.FC<React.ReactNode> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null)
 
-  const [isAuthenticated, setIsAuthenticated] = useState(Boolean)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
 
 
   useEffect(() => {
